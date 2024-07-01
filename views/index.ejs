@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <!-- CSS only -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar w-100 navbar-expand-lg position-absolute"
+                style="z-index: 2;">
+                <div class="container">
+                    <div class="logo">
+                        <h3 class="text-white">Blog</h3>
+                    </div>
+                    <ul class="nav ms-auto align-items-center">
+                        <li class="nav-item"><a class="nav-link text-white"
+                                href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-white"
+                                href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link text-white"
+                                href="/user/login">Login</a></li>
+                        <li class="nav-item"><a class="nav-link text-white"
+                                href="/postform"><button type="button" class="btn btn-info">New Post</button>
+                            </a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <section class="position-relative">
+            <!-- <div class="container"> -->
+            <div id="carouselExampleSlidesOnly" class="carousel slide"
+                data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="pexels-ylanite-koppens-796602.jpg"
+                            class="w-100 d-block slide-img" style="height: 600px;"
+                            alt="slide">
+                    </div>
+                    <div class="caption">
+                        <h1>Blog</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- blogs -->
+        <section class="mt-5">
+            <div class="container">
+                <div class="row">
+                    <% data.forEach((i) => {%>
+                    <div class="col-4">
+                        <div class="card">
+                            <img src="<%= i.img %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title"><%=i.head%></h5>
+                              <small><%= i.subhead%></small>
+                              <p class="card-text"><%=i.desc%></p>
+                              <a href="/editblog/<%= i.id %>" class="btn btn-success">Edit</a>
+                              <a href="/deleteblog/<%= i.id %>" class="btn btn-danger">Delete</a>
+                            </div>
+                          </div>
+                    </div>
+                    <%}) %>
+                </div>
+            </div>
+        </section>
+
+        <!-- JavaScript Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous">
+        </script>
+    </body>
+</html>

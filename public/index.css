@@ -1,0 +1,27 @@
+.carousel{
+    position: relative;
+}
+.carousel::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.caption{
+    z-index: 2;
+    top: 45%;
+    left: 40%;
+    color: white;
+    position: absolute;
+    /* transform: translate(50%); */
+}
+.caption h1{
+    font-size: 50px;
+    font-weight: bolder;
+    /* font-family: 'arial bold'; */
+    text-transform: uppercase;
+}
